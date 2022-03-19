@@ -16,12 +16,12 @@ function HomePage() {
   return (
     <HomePageWrapper>
       <div className='input-container'>
-        <h6>Search Weather</h6>
         <input
           onChange={(e) => setInputValue(e.target.value)}
           value={inputValue}
           onKeyDown={searchWeatherHandler}
           type='text'
+          placeholder='Search Weather'
         />
       </div>
       <WeatherCard searchString={searchString} />
@@ -41,11 +41,6 @@ const HomePageWrapper = styled.section`
   .input-container {
     height: 150px;
     text-align: center;
-
-    h6 {
-      color: #3d4346;
-      font-size: 1.2rem;
-    }
 
     input {
       all: unset;
