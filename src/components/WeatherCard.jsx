@@ -37,7 +37,6 @@ const WeatherCardWrapper = styled.div`
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
   border-radius: 8px;
   color: #3d4346;
   margin-bottom: 2rem;
