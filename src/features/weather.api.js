@@ -1,7 +1,7 @@
 import { useQuery } from 'react-query';
 import { get } from '../utils/fetchHelpers';
 
-const apiKey = '9YTGM3Y29FFRG69E7SZEQ4GDJ';
+const apiKey = import.meta.env.VITE_API_KEY;
 const baseURL = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/`;
 
 export function useWeather(searchString) {
