@@ -10,7 +10,9 @@ function WeatherCard({ searchString }) {
 
   return (
     <>
-      {data === undefined ? null : (
+      {data === undefined ? (
+        <h1>Sorry no weather data for that location</h1>
+      ) : (
         <WeatherCardWrapper>
           <div className='current-weather-info-container'>
             <h4>{fixSearchString(data.address)}</h4>

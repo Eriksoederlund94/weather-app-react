@@ -43,7 +43,7 @@ const HomePageWrapper = styled.section`
     text-align: center;
 
     h6 {
-      color: #fff;
+      color: #3d4346;
       font-size: 1.2rem;
     }
 

@@ -9,7 +9,7 @@ export const getTheCurrentDate = () => {
 };
 
 export const fixSearchString = (str) => {
-  const result = str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  const stringResult = str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 
-  return result;
+  return stringResult;
 };
