@@ -2,9 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { useWeather } from '../features/weather.api';
 import { getTheCurrentDate, fixSearchString } from '../utils/helpers';
+import { useNavigate } from 'react-router-dom';
 
 function WeatherCard({ searchString }) {
   const { data } = useWeather(searchString);
+  let navigate = useNavigate();
 
   console.log(data);
 
@@ -19,6 +21,7 @@ function WeatherCard({ searchString }) {
             <h1>{data.currentConditions.temp}°c</h1>
             <h6>{getTheCurrentDate()}</h6>
             <p>{data.description}</p>
+            <button onClick={() => navigate('/weather-prognos')}>See more details</button>
           </div>
         </WeatherCardWrapper>
       )}
@@ -63,6 +66,20 @@ const WeatherCardWrapper = styled.div`
 
     p {
       font-size: 1rem;
+    }
+
+    button {
+      all: unset;
+      margin-top: 1rem;
+      font-size: 1rem;
+      padding: 0.5rem 1.5rem;
+      border: 3px solid rgba(255, 255, 255, 0.18);
+      border-radius: 6px;
+      cursor: pointer;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.05);
+      }
     }
   }
 `;
