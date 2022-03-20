@@ -1,29 +1,11 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 import WeatherCard from '../components/WeatherCard';
+import SearchInput from '../components/SearchInput';
 
-function HomePage() {
-  const [searchString, setSearchString] = useState('');
-  const [inputValue, setInputValue] = useState('');
-
-  const searchWeatherHandler = (event) => {
-    if (event.key === 'Enter') {
-      setSearchString(event.target.value);
-      setInputValue('');
-    }
-  };
-
+function HomePage({ searchString, setSearchString }) {
   return (
     <HomePageWrapper>
-      <div className='input-container'>
-        <input
-          onChange={(e) => setInputValue(e.target.value)}
-          value={inputValue}
-          onKeyDown={searchWeatherHandler}
-          type='text'
-          placeholder='Search Weather'
-        />
-      </div>
+      <SearchInput setSearchString={setSearchString} />
       <WeatherCard searchString={searchString} />
     </HomePageWrapper>
   );
