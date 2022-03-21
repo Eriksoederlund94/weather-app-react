@@ -6,12 +6,11 @@ import { fixSearchString } from '../utils/helpers';
 
 function WeatherPrognosPage({ searchString, setSearchString }) {
   const { data } = useWeather(searchString);
-  console.log(data);
-  <WeatherTabel />;
+
   return (
     <WeatherPrognosPageWrapper>
       <SearchInput setSearchString={setSearchString} />
-      {data === undefined ? null : <h1>{fixSearchString(data.address)}</h1>}
+      {data === undefined ? null : <h1>Weather for {fixSearchString(data.address)}</h1>}
       {data === undefined ? null : data.days.map((weatherdays, index) => <WeatherTabel key={index} {...weatherdays} />)}
     </WeatherPrognosPageWrapper>
   );
@@ -25,6 +24,8 @@ const WeatherPrognosPageWrapper = styled.section`
   justify-content: center;
   align-items: center;
   font-size: 1.4rem;
+  color: #3d4346;
+  margin-bottom: 6rem;
 `;
 
 export default WeatherPrognosPage;

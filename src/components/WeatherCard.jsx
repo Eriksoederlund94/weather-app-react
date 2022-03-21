@@ -8,8 +8,6 @@ function WeatherCard({ searchString }) {
   const { data } = useWeather(searchString);
   let navigate = useNavigate();
 
-  console.log(data);
-
   return (
     <>
       {data === undefined ? null : (
